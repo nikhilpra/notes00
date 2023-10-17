@@ -59,7 +59,7 @@ footer p {
   word-wrap: break-word;
 }
 
-.note button {
+.button {
   position: relative;
   float: right;
   margin-right: 10px;
@@ -69,6 +69,7 @@ footer p {
   height: 36px;
   cursor: pointer;
   outline: none;
+  background-color: white;
 }
 /* commment */
 form.create-note {

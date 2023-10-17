@@ -107,24 +107,22 @@ function App() {
       ) : (
         <>
           <CreateArea onAdd={addNote} />
-          <Container>
-            <Row>
+          <MDBContainer>
+            <MDBRow className="row-cols-1 row-cols-lg-3 row-cols-md-2 row-cols-sm-1  g-4">
               {notes.map((noteItem, index) => {
                 return (
-                  <Col sm={4}>
-                    <Note
-                      key={index}
-                      id={noteItem._id}
-                      title={noteItem.title}
-                      content={noteItem.content}
-                      onDelete={deleteNote}
-                      handleEdit={handleEdit}
-                    />
-                  </Col>
+                  <Note
+                    key={index}
+                    id={noteItem._id}
+                    title={noteItem.title}
+                    content={noteItem.content}
+                    onDelete={deleteNote}
+                    handleEdit={handleEdit}
+                  />
                 );
               })}
-            </Row>
-          </Container>
+            </MDBRow>
+          </MDBContainer>
         </>
       )}
 

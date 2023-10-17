@@ -38,7 +38,7 @@ footer {
 footer p {
   color: #ccc;
 }
-.note {
+/* .note {
   background: #fff;
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
@@ -46,9 +46,9 @@ footer p {
   width: 240px;
   margin: 16px;
   float: left;
-}
+} */
 
-.note h1 {
+/* .note h1 {
   font-size: 1.1em;
   margin-bottom: 6px;
 }
@@ -57,7 +57,7 @@ footer p {
   margin-bottom: 10px;
   white-space: pre-wrap;
   word-wrap: break-word;
-}
+} */
 
 .button {
   position: relative;
@@ -106,7 +106,7 @@ form.create-note button {
   outline: none;
 }
 
-.note button:hover {
+.newnote button:hover {
   color: red;
 }
 
@@ -117,6 +117,9 @@ form.create-note button {
 .note:hover {
   box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
 }
+/* .newnote:hover {
+  box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+} */
 
 .clicked {
   color: red;

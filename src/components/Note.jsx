@@ -20,7 +20,7 @@ export default function Note(props) {
   return (
     <MDBCol className="contain mb-0">
       <MDBCard>
-        <MDBCardBody className="p-3 pb-1" onDoubleClick={handleEdit}>
+        <MDBCardBody className="p-3 pb-1 newnote" onDoubleClick={handleEdit}>
           <MDBCardTitle>{props.title}</MDBCardTitle>
           <MDBCardText>{props.content}</MDBCardText>
           <button class="button" onClick={handleClick}>

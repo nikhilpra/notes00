@@ -1,7 +1,14 @@
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCol,
+} from "mdb-react-ui-kit";
 
-function Note(props) {
+export default function Note(props) {
   function handleClick() {
     props.onDelete(props.id);
   }
@@ -11,14 +18,16 @@ function Note(props) {
   }
 
   return (
-    <div className="note" onDoubleClick={handleEdit}>
-      <h1>{props.title}</h1>
-      <p>{props.content}</p>
-      <button style={{ backgroundColor: "white" }} onClick={handleClick}>
-        <DeleteIcon className="deleteIcon" />
-      </button>
-    </div>
+    <MDBCol className="contain mb-0">
+      <MDBCard>
+        <MDBCardBody className="p-3 pb-1 newnote" onDoubleClick={handleEdit}>
+          <MDBCardTitle>{props.title}</MDBCardTitle>
+          <MDBCardText>{props.content}</MDBCardText>
+          <button class="button" onClick={handleClick}>
+            <DeleteIcon className="deleteIcon" />
+          </button>
+        </MDBCardBody>
+      </MDBCard>
+    </MDBCol>
   );
 }
-
-export default Note;

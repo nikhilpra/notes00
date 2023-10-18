@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Header from "./Header";
-import Footer from "./Footer";
+//import Footer from "./Footer";
 import Note from "./Note";
 import CreateArea from "./CreateArea";
 import axios from "axios";
 import EditSection from "./EditSection";
-
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
+import { MDBContainer, MDBRow } from "mdb-react-ui-kit";
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -98,37 +95,35 @@ function App() {
       <Header />
 
       {itemClicked ? (
-        <EditSection
-          id={noteDetail.eid}
-          title={noteDetail.title}
-          content={noteDetail.content}
-          handlePatch={handlePatch}
-        />
+        <>
+          <EditSection
+            id={noteDetail.eid}
+            title={noteDetail.title}
+            content={noteDetail.content}
+            handlePatch={handlePatch}
+          />
+        </>
       ) : (
         <>
           <CreateArea onAdd={addNote} />
-          <Container>
-            <Row>
+          <MDBContainer>
+            <MDBRow className="row-cols-1 row-cols-lg-5 row-cols-md-2 row-cols-sm-1  g-4 pt-2">
               {notes.map((noteItem, index) => {
                 return (
-                  <Col sm={4}>
-                    <Note
-                      key={index}
-                      id={noteItem._id}
-                      title={noteItem.title}
-                      content={noteItem.content}
-                      onDelete={deleteNote}
-                      handleEdit={handleEdit}
-                    />
-                  </Col>
+                  <Note
+                    key={index}
+                    id={noteItem._id}
+                    title={noteItem.title}
+                    content={noteItem.content}
+                    onDelete={deleteNote}
+                    handleEdit={handleEdit}
+                  />
                 );
               })}
-            </Row>
-          </Container>
+            </MDBRow>
+          </MDBContainer>
         </>
       )}
-
-      <Footer />
     </div>
   );
 }
